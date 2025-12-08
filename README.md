@@ -1,73 +1,49 @@
-# React + TypeScript + Vite
+# McDonald's Food Safety Quiz
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A web-based training tool designed to help McDonald's managers and shift leaders practise and reinforce their food safety knowledge. The quiz covers critical topics from the Food Safety Rationale document used in the Leadership Transition Course.
 
-Currently, two official plugins are available:
+## Purpose
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Food safety is essential in restaurant operations. This quiz helps managers:
 
-## React Compiler
+- Test their knowledge of food safety procedures and standards
+- Practise answering questions in a low-pressure environment before official assessments
+- Review explanations for each answer to reinforce learning
+- Track their readiness with a pass/fail score (80% required to pass)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## How It Works
 
-## Expanding the ESLint configuration
+1. **Random Question Selection**: Each quiz session randomly selects 20 questions from the question bank, ensuring variety across multiple attempts
+2. **Shuffled Answers**: Answer options are randomised each time to prevent pattern memorisation
+3. **Immediate Feedback**: After selecting an answer, users see whether they were correct along with a detailed explanation
+4. **Progress Tracking**: A progress bar shows how far through the quiz the user is
+5. **Results Summary**: At the end, users see their score and whether they passed or need more practice
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Topics Covered
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Temperature control for refrigerated and frozen products
+- Cooking temperatures for various menu items (eggs, beef, chicken)
+- Personal hygiene and illness policies
+- Equipment calibration and maintenance
+- Cross-contamination prevention
+- Daily food safety procedures
+- Health inspection protocols
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Admin Dashboard
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Authorised administrators can manage the question bank through a secure dashboard:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- Add new questions
+- Edit existing questions and answers
+- Remove outdated questions
+- All changes are reflected immediately in the quiz
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Technical Details
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Built with:
+- React + TypeScript
+- Tailwind CSS
+- Supabase (database and authentication)
+- Vite (build tool)
+
+Deployed as a static site to GitHub Pages with automatic deployments on push to main.
