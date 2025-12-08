@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { ProgressBar, LoadingSpinner, ErrorMessage } from '../components/ui';
 import { QuizHeader, StartScreen, QuestionCard, Results } from '../components/quiz';
 import { useQuestions } from '../hooks/useQuestions';
@@ -61,7 +62,14 @@ export function Quiz() {
   const { questions, isLoading, error } = useQuestions();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-mcd-yellow to-mcd-red p-5 flex justify-center items-center font-sans">
+    <div className="min-h-screen bg-gradient-to-br from-mcd-yellow to-mcd-red p-5 flex justify-center items-center font-sans relative">
+      <Link
+        to="/admin"
+        className="absolute top-4 right-4 text-white/70 text-sm font-medium hover:text-white transition-colors duration-200 group"
+      >
+        Admin
+        <span className="block h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" />
+      </Link>
       <div className="bg-white rounded-2xl shadow-2xl max-w-[800px] w-full overflow-hidden">
         <QuizHeader title="McDonald's Food Safety Quiz" subtitle="Leadership Transition Course" />
 
