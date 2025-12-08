@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(bun create:*)",
+      "Bash(/Users/neohaggard/.bun/bin/bun create:*)",
+      "Bash(/Users/neohaggard/.bun/bin/bun install)",
+      "Bash(/Users/neohaggard/.bun/bin/bun add:*)",
+      "Bash(/Users/neohaggard/.bun/bin/bun run build:*)",
+      "Bash(timeout 5 /Users/neohaggard/.bun/bin/bun dev:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
